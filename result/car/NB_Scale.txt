@@ -1,0 +1,21 @@
+------Confusion Matrix------
+[[12,  0,  0],
+ [ 0, 14,  1],
+ [ 0,  1, 18]]
+
+------Report------
+                 precision    recall  f1-score   support
+
+    Iris-setosa       1.00      1.00      1.00        12
+Iris-versicolor       0.93      0.93      0.93        15
+ Iris-virginica       0.95      0.95      0.95        19
+
+      micro avg       0.96      0.96      0.96        46
+      macro avg       0.96      0.96      0.96        46
+   weighted avg       0.96      0.96      0.96        46
+
+
+-------------
+* Accuracy is: 0.9565217391304348
+
+* Running time: 0.00 (s)
