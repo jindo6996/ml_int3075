@@ -15,7 +15,6 @@ def NotScaleSVM():
     global avgNotScaleACC, avgNotScaleF1
     avgNotScaleACC += accuracy_score(y_pred, y_test)
     avgNotScaleF1 +=f1_score(y_pred, y_test, average='weighted')
-    print(avgNotScaleF1)
 
 
 def ScaleSVM():
