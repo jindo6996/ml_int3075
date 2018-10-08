@@ -2,7 +2,7 @@ import numpy as np
 from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
-from sklearn.metrics import confusion_matrix, f1_score
+from sklearn.metrics import confusion_matrix, f1_score, classification_report
 from sklearn.metrics import accuracy_score
 from sklearn.svm import SVC
 
@@ -15,6 +15,7 @@ def NotScaleSVM():
     global avgNotScaleACC, avgNotScaleF1
     avgNotScaleACC += accuracy_score(y_pred, y_test)
     avgNotScaleF1 +=f1_score(y_pred, y_test, average='weighted')
+    print(avgNotScaleF1)
 
 
 def ScaleSVM():
@@ -26,7 +27,9 @@ def ScaleSVM():
     y_pred = classifier.predict(X_test_scaled)
     global avgScaleACC, avgScaleF1
     avgScaleACC += accuracy_score(y_pred, y_test)
-    avgScaleF1 +=f1_score(y_pred, y_test, average='weighted')
+    avgScaleF1 += f1_score(y_pred, y_test, average='weighted')
+    fileNotScale.write("------Report------\n" + classification_report(y_test, y_pred))
+
 
 if __name__ == "__main__":
     dataTrain = pd.read_csv('../dataset/car/carTrain.csv')
