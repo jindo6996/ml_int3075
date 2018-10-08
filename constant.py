@@ -1,5 +1,5 @@
-Iris_Not_Scale_KNN = "result/Iris/KNN_Not_Scale.txt"
-Iris_Scale_KNN = "result/Iris/KNN_Scale.txt"
+Iris_Not_Scale_KNN = "../result/Iris/KNN_Not_Scale.txt"
+Iris_Scale_KNN = "../result/Iris/KNN_Scale.txt"
 Iris_Not_Scale_NB = "../result/Iris/NB_Not_Scale.txt"
 Iris_Scale_NB = "../result/Iris/NB_Scale.txt"
 Iris_Not_Scale_SVM = "../result/Iris/SVM_Not_Scale.txt"

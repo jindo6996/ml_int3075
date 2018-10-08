@@ -1,7 +1,5 @@
 import numpy as np
-import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler
-sns.set(color_codes=True)
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report

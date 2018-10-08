@@ -1,7 +1,5 @@
 import numpy as np
-import seaborn as sns
 from sklearn.preprocessing import MinMaxScaler
-sns.set(color_codes=True)
 import pandas as pd
 from sklearn.metrics import confusion_matrix
 from sklearn.metrics import classification_report
@@ -36,8 +34,8 @@ def ScaleKNN():
     # file.write('\n\n-------------\n* Accuracy is: '+ accuracy_score(y_pred, y_test).__str__())
     # file.write("\n\n* Running time: %.2f (s)" % (end_time - start_time))
 if __name__ == "__main__":
-    dataTrain = pd.read_csv('dataset/Iris/irisTrain.csv')
-    dataTest = pd.read_csv('dataset/Iris/irisTest.csv')
+    dataTrain = pd.read_csv('../dataset/Iris/irisTrain.csv')
+    dataTest = pd.read_csv('../dataset/Iris/irisTest.csv')
     X_train = dataTrain.iloc[:, :-1].values  # tach data
     y_train = dataTrain.iloc[:, -1].values  # tach nhan
     X_test = dataTest.iloc[:, :-1].values
