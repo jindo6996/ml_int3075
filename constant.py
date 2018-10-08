@@ -16,3 +16,13 @@ Car_Not_Scale_SVM = "../result/car/SVM_Not_Scale.txt"
 Car_Scale_SVM = "../result/car/SVM_Scale.txt"
 Car_Not_Scale_NN = "../result/car/NN_Not_Scale.txt"
 Car_Scale_NN = "../result/car/NN_Scale.txt"
+
+# abalone
+abalone_Not_Scale_KNN = "../result/abalone/KNN_Not_Scale.txt"
+abalone_Scale_KNN = "../result/abalone/KNN_Scale.txt"
+abalone_Not_Scale_NB = "../result/abalone/NB_Not_Scale.txt"
+abalone_Scale_NB = "../result/abalone/NB_Scale.txt"
+abalone_Not_Scale_SVM = "../result/abalone/SVM_Not_Scale.txt"
+abalone_Scale_SVM = "../result/abalone/SVM_Scale.txt"
+abalone_Not_Scale_NN = "../result/abalone/NN_Not_Scale.txt"
+abalone_Scale_NN = "../result/abalone/NN_Scale.txt"

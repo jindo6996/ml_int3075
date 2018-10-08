@@ -13,12 +13,11 @@ def NotScaleKNN():
     y_pred = classifier.predict(X_test)
     global avgNotScaleACC, avgNotScaleF1
     avgNotScaleACC += accuracy_score(y_pred, y_test)
-    a = f1_score(y_pred, y_test, average=None)
-    avgNotScaleF1 += np.mean(a)
+    avgNotScaleF1 +=f1_score(y_pred, y_test, average='weighted')
 
 
 def ScaleKNN():
-    scaler = MinMaxScaler((-1,1))
+    scaler = MinMaxScaler((-1, 1))
     X_train_scaled = scaler.fit_transform(X_train)
     X_test_scaled = scaler.transform(X_test)
     classifier = KNeighborsClassifier(n_neighbors=9)
@@ -26,8 +25,7 @@ def ScaleKNN():
     y_pred = classifier.predict(X_test_scaled)
     global avgScaleACC, avgScaleF1
     avgScaleACC += accuracy_score(y_pred, y_test)
-    a =f1_score(y_pred, y_test, average=None)
-    avgScaleF1 += np.mean(a)
+    avgScaleF1 +=f1_score(y_pred, y_test, average='weighted')
 
 if __name__ == "__main__":
     dataTrain = pd.read_csv('../dataset/Iris/irisTrain.csv')

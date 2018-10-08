@@ -12,8 +12,7 @@ def NotScaleNB():
     y_pred = classifier.predict(X_test)
     global avgNotScaleACC, avgNotScaleF1
     avgNotScaleACC += accuracy_score(y_pred, y_test)
-    a = f1_score(y_pred, y_test, average=None)
-    avgNotScaleF1 += np.mean(a)
+    avgNotScaleF1 +=f1_score(y_pred, y_test, average='weighted')
 
 
 def ScaleNB():
@@ -25,8 +24,7 @@ def ScaleNB():
     y_pred = classifier.predict(X_test_scaled)
     global avgScaleACC, avgScaleF1
     avgScaleACC += accuracy_score(y_pred, y_test)
-    a =f1_score(y_pred, y_test, average=None)
-    avgScaleF1 += np.mean(a)
+    avgScaleF1 +=f1_score(y_pred, y_test, average='weighted')
 
 if __name__ == "__main__":
     dataTrain = pd.read_csv('../dataset/Iris/irisTrain.csv')
