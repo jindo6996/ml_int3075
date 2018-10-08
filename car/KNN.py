@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn import preprocessing
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 from sklearn.metrics import confusion_matrix, f1_score
@@ -13,8 +14,8 @@ def NotScaleKNN():
     y_pred = classifier.predict(X_test)
     global avgNotScaleACC, avgNotScaleF1
     avgNotScaleACC += accuracy_score(y_pred, y_test)
-    a = f1_score(y_pred, y_test, average=None)
-    avgNotScaleF1 += np.mean(a)
+    avgNotScaleF1 +=f1_score(y_pred, y_test, average='weighted')
+    # fileNotScale.write("------Report------\n" + classification_report(y_test, y_pred))
 
 
 def ScaleKNN():
@@ -26,15 +27,21 @@ def ScaleKNN():
     y_pred = classifier.predict(X_test_scaled)
     global avgScaleACC, avgScaleF1
     avgScaleACC += accuracy_score(y_pred, y_test)
-    a =f1_score(y_pred, y_test, average=None)
-    avgScaleF1 += np.mean(a)
+    avgScaleF1 += f1_score(y_pred, y_test, average='weighted')
+    # fileScale.write("------Report------\n" + classification_report(y_test, y_pred))
 
 if __name__ == "__main__":
-    dataTrain = pd.read_csv('../dataset/Iris/irisTrain.csv')
-    dataTest = pd.read_csv('../dataset/Iris/irisTest.csv')
-    fileScale = open(constant.Iris_Scale_KNN, "w")
-    fileNotScale = open(constant.Iris_Not_Scale_KNN, "w")
+    dataTrain = pd.read_csv('../dataset/car/carTrain.csv')
+    # create dataTrain
+    le = preprocessing.LabelEncoder()
+    dataTrain = dataTrain.apply(le.fit_transform)
+    # create dataTest
+    dataTest = pd.read_csv('../dataset/car/carTest.csv')
+    dataTest = dataTest.apply(le.fit_transform)
+    fileScale = open(constant.Car_Scale_KNN, "w")
+    fileNotScale = open(constant.Car_Not_Scale_KNN, "w")
     X_train = dataTrain.iloc[:, :-1].values  # tach data
+    print(X_train)
     y_train = dataTrain.iloc[:, -1].values  # tach nhan
     X_test = dataTest.iloc[:, :-1].values
     y_test = dataTest.iloc[:, -1].values
@@ -43,9 +50,9 @@ if __name__ == "__main__":
     avgNotScaleF1 = 0
     avgScaleF1 = 0
     times = 5
-    for i in range(times):
-        NotScaleKNN()
-        ScaleKNN()
+    # for i in range(times):
+        # NotScaleKNN()
+        # ScaleKNN()
     # print not scale
     fileNotScale.write("ACC Not scale: " + (avgNotScaleACC/times).__str__())
     fileNotScale.write("\nF1 Not scale: " + (avgNotScaleF1/times).__str__())
