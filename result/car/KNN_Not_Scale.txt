@@ -1,2 +1,57 @@
-ACC Not scale: 0.8880308880308881
-F1 Not scale: 0.8994890038776238
+------Report------
+              precision    recall  f1-score   support
+
+           0       0.80      0.69      0.74        99
+           1       1.00      0.38      0.56        26
+           2       0.91      0.98      0.94       377
+           3       0.88      0.88      0.88        17
+
+   micro avg       0.89      0.89      0.89       519
+   macro avg       0.90      0.73      0.78       519
+weighted avg       0.89      0.89      0.88       519
+------Report------
+              precision    recall  f1-score   support
+
+           0       0.80      0.69      0.74        99
+           1       1.00      0.38      0.56        26
+           2       0.91      0.98      0.94       377
+           3       0.88      0.88      0.88        17
+
+   micro avg       0.89      0.89      0.89       519
+   macro avg       0.90      0.73      0.78       519
+weighted avg       0.89      0.89      0.88       519
+------Report------
+              precision    recall  f1-score   support
+
+           0       0.80      0.69      0.74        99
+           1       1.00      0.38      0.56        26
+           2       0.91      0.98      0.94       377
+           3       0.88      0.88      0.88        17
+
+   micro avg       0.89      0.89      0.89       519
+   macro avg       0.90      0.73      0.78       519
+weighted avg       0.89      0.89      0.88       519
+------Report------
+              precision    recall  f1-score   support
+
+           0       0.80      0.69      0.74        99
+           1       1.00      0.38      0.56        26
+           2       0.91      0.98      0.94       377
+           3       0.88      0.88      0.88        17
+
+   micro avg       0.89      0.89      0.89       519
+   macro avg       0.90      0.73      0.78       519
+weighted avg       0.89      0.89      0.88       519
+------Report------
+              precision    recall  f1-score   support
+
+           0       0.80      0.69      0.74        99
+           1       1.00      0.38      0.56        26
+           2       0.91      0.98      0.94       377
+           3       0.88      0.88      0.88        17
+
+   micro avg       0.89      0.89      0.89       519
+   macro avg       0.90      0.73      0.78       519
+weighted avg       0.89      0.89      0.88       519
+ACC Not scale: 0.8921001926782275
+F1 Not scale: 0.9008474099756907

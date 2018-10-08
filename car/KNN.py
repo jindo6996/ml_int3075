@@ -14,7 +14,7 @@ def NotScaleKNN():
     y_pred = classifier.predict(X_test)
     global avgNotScaleACC, avgNotScaleF1
     avgNotScaleACC += accuracy_score(y_pred, y_test)
-    avgNotScaleF1 +=f1_score(y_pred, y_test, average='weighted')
+    avgNotScaleF1 += f1_score(y_pred, y_test, average='weighted')
     # fileNotScale.write("------Report------\n" + classification_report(y_test, y_pred))
 
 
@@ -41,7 +41,6 @@ if __name__ == "__main__":
     fileScale = open(constant.Car_Scale_KNN, "w")
     fileNotScale = open(constant.Car_Not_Scale_KNN, "w")
     X_train = dataTrain.iloc[:, :-1].values  # tach data
-    print(X_train)
     y_train = dataTrain.iloc[:, -1].values  # tach nhan
     X_test = dataTest.iloc[:, :-1].values
     y_test = dataTest.iloc[:, -1].values
@@ -50,9 +49,9 @@ if __name__ == "__main__":
     avgNotScaleF1 = 0
     avgScaleF1 = 0
     times = 5
-    # for i in range(times):
-        # NotScaleKNN()
-        # ScaleKNN()
+    for i in range(times):
+        NotScaleKNN()
+        ScaleKNN()
     # print not scale
     fileNotScale.write("ACC Not scale: " + (avgNotScaleACC/times).__str__())
     fileNotScale.write("\nF1 Not scale: " + (avgNotScaleF1/times).__str__())

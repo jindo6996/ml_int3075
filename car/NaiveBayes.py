@@ -1,4 +1,5 @@
 import numpy as np
+from sklearn import preprocessing
 from sklearn.naive_bayes import GaussianNB
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
@@ -27,10 +28,15 @@ def ScaleNB():
     avgScaleF1 +=f1_score(y_pred, y_test, average='weighted')
 
 if __name__ == "__main__":
-    dataTrain = pd.read_csv('../dataset/Iris/irisTrain.csv')
-    dataTest = pd.read_csv('../dataset/Iris/irisTest.csv')
-    fileScale = open(constant.Iris_Scale_NB, "w")
-    fileNotScale = open(constant.Iris_Not_Scale_NB, "w")
+    dataTrain = pd.read_csv('../dataset/car/carTrain.csv')
+    # create dataTrain
+    le = preprocessing.LabelEncoder()
+    dataTrain = dataTrain.apply(le.fit_transform)
+    # create dataTest
+    dataTest = pd.read_csv('../dataset/car/carTest.csv')
+    dataTest = dataTest.apply(le.fit_transform)
+    fileScale = open(constant.Car_Scale_NB, "w")
+    fileNotScale = open(constant.Car_Not_Scale_NB, "w")
     X_train = dataTrain.iloc[:, :-1].values  # tach data
     y_train = dataTrain.iloc[:, -1].values  # tach nhan
     X_test = dataTest.iloc[:, :-1].values
